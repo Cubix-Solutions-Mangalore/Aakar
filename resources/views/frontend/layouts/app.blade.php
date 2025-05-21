@@ -13,7 +13,7 @@
 
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="{{ asset('assets/app-icons/icon-32x32.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/techTravelLogo.png') }}" sizes="32x32">
     <link rel="apple-touch-icon" href="{{ asset('assets/app-icons/icon-180x180.png') }}">
 
     <script src="assets/js/theme-switcher.js"></script>
