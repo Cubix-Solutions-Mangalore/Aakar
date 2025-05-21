@@ -42,4 +42,8 @@ class HomeController extends Controller
         return view('popular_activity');
     }
 
+    public function details()
+    {
+        return view('details');
+    }
 }
