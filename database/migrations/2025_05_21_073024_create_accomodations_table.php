@@ -13,6 +13,26 @@ return new class extends Migration
     {
         Schema::create('accomodations', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
+            $table->longText('description')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('website')->nullable();
+            $table->string('image')->nullable();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('place_id')->constrained()->cascadeOnDelete();
+            $table->dateTime('opening_time')->nullable();
+            $table->dateTime('closing_time')->nullable();
+            $table->string('logo')->nullable();
+            $table->longText('tags')->nullable();
+            $table->longText('gmap')->nullable();
+            $table->string('description_tags')->nullable();
+            $table->enum('room_type', ['single', 'double', 'suite'])->nullable();
+            $table->string('room_price')->nullable();
+            $table->string('room_capacity')->nullable();
+            $table->string('room_amenities')->nullable();
             $table->timestamps();
         });
     }
