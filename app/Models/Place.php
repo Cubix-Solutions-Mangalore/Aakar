@@ -20,7 +20,23 @@ class Place extends Model
     protected $fillable = [
         'name',
         'slug',
+        'location',
+        'country',
+        'city',
+        'country_flag',
+        'gmap',
+        'images',
         'description',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array<string, class-string>
+     */
+
+    protected $casts = [
+        'images' => 'array',
     ];
 
     public function shopping()
