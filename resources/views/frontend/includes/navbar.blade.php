@@ -46,12 +46,17 @@
             <div class="offcanvas-body pt-2 pb-4 py-lg-0 mx-lg-auto">
                 <ul class="navbar-nav position-relative">
                     <li class="nav-item py-lg-2 me-lg-n1 me-xl-0">
-                        <a class="nav-link rounded-pill" aria-current="page" href="#" role="button" {{--
+                        <a class="nav-link rounded-pill" aria-current="page" href="/" role="button"
+                            {{--
                             data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false" --}}>Home</a>
                     </li>
                     <li class="nav-item position-static py-lg-2 me-lg-n1 me-xl-0">
-                        <a class="nav-link rounded-pill" href="{{ route('accomodation') }}" role="button" data-bs-toggle="dropdown"
-                            data-bs-trigger="hover" aria-expanded="false">Accommodations</a>
+                        <a class="nav-link roundee-pill" href="{{ route('destination') }}" role="button"
+                            data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Destination</a>
+                    </li>
+                    <li class="nav-item position-static py-lg-2 me-lg-n1 me-xl-0">
+                        <a class="nav-link rounded-pill" href="{{ route('accomodation') }}" role="button"
+                            data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Accommodations</a>
                     </li>
                     <li class="nav-item py-lg-2 me-lg-n1 me-xl-0">
                         <a class="nav-link rounded-pill" href="#" role="button" data-bs-toggle="dropdown"
@@ -108,18 +113,18 @@
             </div>
 
             @auth
-            <!-- Account button -->
-            <a class="btn btn-icon btn-outline-secondary fs-lg border-0 animate-shake me-2" href="account-signin.html"
-                aria-label="Sign in to account">
-                <i class="fi-user animate-target"></i>
-            </a>
+                <!-- Account button -->
+                <a class="btn btn-icon btn-outline-secondary fs-lg border-0 animate-shake me-2" href="account-signin.html"
+                    aria-label="Sign in to account">
+                    <i class="fi-user animate-target"></i>
+                </a>
             @endauth
-            @guest   
-            <!-- Add business button  -->
-            <a class="btn btn-primary animate-scale rounded-pill" href="{{ route('register') }}">
-                {{-- <i class="fi-arrow fs-lg animate-target ms-n2 me-1 me-sm-2"></i> --}}
-                Sign Up
-            </a>
+            @guest
+                <!-- Add business button  -->
+                <a class="btn btn-primary animate-scale rounded-pill" href="{{ route('register') }}">
+                    {{-- <i class="fi-arrow fs-lg animate-target ms-n2 me-1 me-sm-2"></i> --}}
+                    Sign Up
+                </a>
             @endguest
         </div>
     </div>
