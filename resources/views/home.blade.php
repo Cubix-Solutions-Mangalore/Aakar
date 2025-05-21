@@ -796,7 +796,7 @@
             </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 mb-sm-n1">
 
-                <!-- Listing -->
+                @foreach ($food as $item)   
                 <div class="col d-flex flex-column mb-sm-1">
                     <article class="hover-effect-scale position-relative d-inline-flex align-items-start">
                         <div class="flex-shrink-0 bg-body-tertiary rounded overflow-hidden p-3 px-md-4">
@@ -808,296 +808,29 @@
                         <div class="min-w-0 pt-1 ps-3">
                             <h3 class="h6 mb-1">
                                 <a class="hover-effect-underline stretched-link"
-                                    href="single-entry-city-guide.html">Mado</a>
+                                    href="single-entry-city-guide.html">{{ $item->name }}</a>
                             </h3>
                             <div class="d-flex align-items-center gap-1 mb-2">
-                                <i class="fi-star-filled text-warning"></i>
-                                <span class="fs-sm text-secondary-emphasis">4.7</span>
-                                <span class="fs-xs text-body-secondary align-self-end">(113)</span>
+                    
+                                <span class="fs-sm text-secondary-emphasis">{{ $item->food_type }}</span>
+                          
                             </div>
                             <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
                                 <li class="d-flex align-items-center gap-1 me-2">
                                     <i class="fi-credit-card"></i>
-                                    $50
+                                    ₹ {{ $item->food_price }}
                                 </li>
                                 <li class="d-flex align-items-center gap-1 min-w-0">
                                     <i class="fi-map-pin"></i>
-                                    <span class="text-truncate">2.5 km from center</span>
+                                    <span class="text-truncate">{{ $item->place->name }}</span>
                                 </li>
                             </ul>
                         </div>
                     </article>
                 </div>
-
+                @endforeach
                 <!-- Listing -->
-                <div class="col d-flex flex-column mb-sm-1">
-                    <article class="hover-effect-scale position-relative d-inline-flex align-items-start">
-                        <div class="flex-shrink-0 bg-body-tertiary rounded overflow-hidden p-3 px-md-4">
-                            <div class="ratio hover-effect-target"
-                                style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)">
-                                <img src={{ asset('assets/img/home/city-guide/restaurants/02.png') }} alt="Image">
-                            </div>
-                        </div>
-                        <div class="min-w-0 pt-1 ps-3">
-                            <h3 class="h6 mb-1">
-                                <a class="hover-effect-underline stretched-link" href="single-entry-city-guide.html">Hard
-                                    Rock Cafe</a>
-                            </h3>
-                            <div class="d-flex align-items-center gap-1 mb-2">
-                                <i class="fi-star-filled text-warning"></i>
-                                <span class="fs-sm text-secondary-emphasis">3.9</span>
-                                <span class="fs-xs text-body-secondary align-self-end">(18)</span>
-                            </div>
-                            <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                <li class="d-flex align-items-center gap-1 me-2">
-                                    <i class="fi-credit-card"></i>
-                                    $45
-                                </li>
-                                <li class="d-flex align-items-center gap-1 min-w-0">
-                                    <i class="fi-map-pin"></i>
-                                    <span class="text-truncate">6.2 km from center</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
 
-                <!-- Listing -->
-                <div class="col d-flex flex-column mb-sm-1">
-                    <article class="hover-effect-scale position-relative d-inline-flex align-items-start">
-                        <div class="flex-shrink-0 bg-body-tertiary rounded overflow-hidden p-3 px-md-4">
-                            <div class="ratio hover-effect-target"
-                                style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)">
-                                <img src={{ asset('assets/img/home/city-guide/restaurants/03-light.png') }}
-                                    class="d-none-dark" alt="Image">
-                                <img src={{ asset('assets/img/home/city-guide/restaurants/03-dark.png') }}
-                                    class="d-none d-block-dark" alt="Image">
-                            </div>
-                        </div>
-                        <div class="min-w-0 pt-1 ps-3">
-                            <h3 class="h6 mb-1">
-                                <a class="hover-effect-underline stretched-link"
-                                    href="single-entry-city-guide.html">Sbarro</a>
-                            </h3>
-                            <div class="d-flex align-items-center gap-1 mb-2">
-                                <i class="fi-star-filled text-warning"></i>
-                                <span class="fs-sm text-secondary-emphasis">4.8</span>
-                                <span class="fs-xs text-body-secondary align-self-end">(127)</span>
-                            </div>
-                            <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                <li class="d-flex align-items-center gap-1 me-2">
-                                    <i class="fi-credit-card"></i>
-                                    $60
-                                </li>
-                                <li class="d-flex align-items-center gap-1 min-w-0">
-                                    <i class="fi-map-pin"></i>
-                                    <span class="text-truncate">5.7 km from center</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Listing -->
-                <div class="col d-flex flex-column mb-sm-1">
-                    <article class="hover-effect-scale position-relative d-inline-flex align-items-start">
-                        <div class="flex-shrink-0 bg-body-tertiary rounded overflow-hidden p-3 px-md-4">
-                            <div class="ratio hover-effect-target"
-                                style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)">
-                                <img src={{ asset('assets/img/home/city-guide/restaurants/04.png') }} alt="Image">
-                            </div>
-                        </div>
-                        <div class="min-w-0 pt-1 ps-3">
-                            <h3 class="h6 mb-1">
-                                <a class="hover-effect-underline stretched-link"
-                                    href="single-entry-city-guide.html">McDonald's</a>
-                            </h3>
-                            <div class="d-flex align-items-center gap-1 mb-2">
-                                <i class="fi-star-filled text-warning"></i>
-                                <span class="fs-sm text-secondary-emphasis">4.9</span>
-                                <span class="fs-xs text-body-secondary align-self-end">(836)</span>
-                            </div>
-                            <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                <li class="d-flex align-items-center gap-1 me-2">
-                                    <i class="fi-credit-card"></i>
-                                    $25
-                                </li>
-                                <li class="d-flex align-items-center gap-1 min-w-0">
-                                    <i class="fi-map-pin"></i>
-                                    <span class="text-truncate">1.4 km from center</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Listing -->
-                <div class="col d-flex flex-column mb-sm-1">
-                    <article class="hover-effect-scale position-relative d-inline-flex align-items-start">
-                        <div class="flex-shrink-0 bg-body-tertiary rounded overflow-hidden p-3 px-md-4">
-                            <div class="ratio hover-effect-target"
-                                style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)">
-                                <img src={{ asset('assets/img/home/city-guide/restaurants/05-light.png') }}
-                                    class="d-none-dark" alt="Image">
-                                <img src={{ asset('assets/img/home/city-guide/restaurants/05-dark.png') }}
-                                    class="d-none d-block-dark" alt="Image">
-                            </div>
-                        </div>
-                        <div class="min-w-0 pt-1 ps-3">
-                            <h3 class="h6 mb-1">
-                                <a class="hover-effect-underline stretched-link" href="single-entry-city-guide.html">Taco
-                                    Bell</a>
-                            </h3>
-                            <div class="d-flex align-items-center gap-1 mb-2">
-                                <i class="fi-star-filled text-warning"></i>
-                                <span class="fs-sm text-secondary-emphasis">4.2</span>
-                                <span class="fs-xs text-body-secondary align-self-end">(73)</span>
-                            </div>
-                            <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                <li class="d-flex align-items-center gap-1 me-2">
-                                    <i class="fi-credit-card"></i>
-                                    $20
-                                </li>
-                                <li class="d-flex align-items-center gap-1 min-w-0">
-                                    <i class="fi-map-pin"></i>
-                                    <span class="text-truncate">2.2 km from center</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Listing -->
-                <div class="col d-flex flex-column mb-sm-1">
-                    <article class="hover-effect-scale position-relative d-inline-flex align-items-start">
-                        <div class="flex-shrink-0 bg-body-tertiary rounded overflow-hidden p-3 px-md-4">
-                            <div class="ratio hover-effect-target"
-                                style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)">
-                                <img src={{ asset('assets/img/home/city-guide/restaurants/06.png') }} alt="Image">
-                            </div>
-                        </div>
-                        <div class="min-w-0 pt-1 ps-3">
-                            <h3 class="h6 mb-1">
-                                <a class="hover-effect-underline stretched-link" href="single-entry-city-guide.html">El
-                                    Pollo Loco</a>
-                            </h3>
-                            <div class="d-flex align-items-center gap-1 mb-2">
-                                <i class="fi-star-filled text-warning"></i>
-                                <span class="fs-sm text-secondary-emphasis">4.4</span>
-                                <span class="fs-xs text-body-secondary align-self-end">(275)</span>
-                            </div>
-                            <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                <li class="d-flex align-items-center gap-1 me-2">
-                                    <i class="fi-credit-card"></i>
-                                    $35
-                                </li>
-                                <li class="d-flex align-items-center gap-1 min-w-0">
-                                    <i class="fi-map-pin"></i>
-                                    <span class="text-truncate">2.3 km from center</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Listing -->
-                <div class="col d-flex flex-column mb-sm-1">
-                    <article class="hover-effect-scale position-relative d-inline-flex align-items-start">
-                        <div class="flex-shrink-0 bg-body-tertiary rounded overflow-hidden p-3 px-md-4">
-                            <div class="ratio hover-effect-target"
-                                style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)">
-                                <img src={{ asset('assets/img/home/city-guide/restaurants/07.png') }} alt="Image">
-                            </div>
-                        </div>
-                        <div class="min-w-0 pt-1 ps-3">
-                            <h3 class="h6 mb-1">
-                                <a class="hover-effect-underline stretched-link" href="single-entry-city-guide.html">Jack
-                                    Restaurant</a>
-                            </h3>
-                            <div class="d-flex align-items-center gap-1 mb-2">
-                                <i class="fi-star-filled text-warning"></i>
-                                <span class="fs-sm text-secondary-emphasis">4.9</span>
-                                <span class="fs-xs text-body-secondary align-self-end">(48)</span>
-                            </div>
-                            <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                <li class="d-flex align-items-center gap-1 me-2">
-                                    <i class="fi-credit-card"></i>
-                                    $50
-                                </li>
-                                <li class="d-flex align-items-center gap-1 min-w-0">
-                                    <i class="fi-map-pin"></i>
-                                    <span class="text-truncate">1.3 km from center</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Listing -->
-                <div class="col d-flex flex-column mb-sm-1">
-                    <article class="hover-effect-scale position-relative d-inline-flex align-items-start">
-                        <div class="flex-shrink-0 bg-body-tertiary rounded overflow-hidden p-3 px-md-4">
-                            <div class="ratio hover-effect-target"
-                                style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)">
-                                <img src={{ asset('assets/img/home/city-guide/restaurants/08.png') }} alt="Image">
-                            </div>
-                        </div>
-                        <div class="min-w-0 pt-1 ps-3">
-                            <h3 class="h6 mb-1">
-                                <a class="hover-effect-underline stretched-link"
-                                    href="single-entry-city-guide.html">TacoTime</a>
-                            </h3>
-                            <div class="d-flex align-items-center gap-1 mb-2">
-                                <i class="fi-star-filled text-warning"></i>
-                                <span class="fs-sm text-secondary-emphasis">4.6</span>
-                                <span class="fs-xs text-body-secondary align-self-end">(179)</span>
-                            </div>
-                            <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                <li class="d-flex align-items-center gap-1 me-2">
-                                    <i class="fi-credit-card"></i>
-                                    $25
-                                </li>
-                                <li class="d-flex align-items-center gap-1 min-w-0">
-                                    <i class="fi-map-pin"></i>
-                                    <span class="text-truncate">4.8 km from center</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Listing -->
-                <div class="col d-flex flex-column mb-sm-1">
-                    <article class="hover-effect-scale position-relative d-inline-flex align-items-start">
-                        <div class="flex-shrink-0 bg-body-tertiary rounded overflow-hidden p-3 px-md-4">
-                            <div class="ratio hover-effect-target"
-                                style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)">
-                                <img src={{ asset('assets/img/home/city-guide/restaurants/09.png') }} alt="Image">
-                            </div>
-                        </div>
-                        <div class="min-w-0 pt-1 ps-3">
-                            <h3 class="h6 mb-1">
-                                <a class="hover-effect-underline stretched-link"
-                                    href="single-entry-city-guide.html">Domino's Pizza</a>
-                            </h3>
-                            <div class="d-flex align-items-center gap-1 mb-2">
-                                <i class="fi-star-filled text-warning"></i>
-                                <span class="fs-sm text-secondary-emphasis">4.5</span>
-                                <span class="fs-xs text-body-secondary align-self-end">(481)</span>
-                            </div>
-                            <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                <li class="d-flex align-items-center gap-1 me-2">
-                                    <i class="fi-credit-card"></i>
-                                    $30
-                                </li>
-                                <li class="d-flex align-items-center gap-1 min-w-0">
-                                    <i class="fi-map-pin"></i>
-                                    <span class="text-truncate">1.7 km from center</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
             </div>
         </section>
 
@@ -1128,117 +861,42 @@
                                     <div class="vstack gap-4">
 
                                         <!-- Listing -->
-                                        <article
-                                            class="hover-effect-scale position-relative d-inline-flex align-items-start mt-1 mt-sm-2">
+                                        @foreach ($threeFood as $food)
+                                        <article class="hover-effect-scale position-relative d-inline-flex align-items-start mt-1 mt-sm-2">
                                             <div class="flex-shrink-0 rounded overflow-hidden p-3 px-md-4">
                                                 <div class="ratio hover-effect-target z-1"
                                                     style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)">
                                                     <img src={{ asset('assets/img/home/city-guide/restaurants/03-light.png') }}
                                                         class="d-none-dark" alt="Image">
-                                                    <img src={{ asset('assets/img/home/city-guide/restaurants/03-dark.png') }}
-                                                        class="d-none d-block-dark" alt="Image">
+                                                    {{-- <img src={{ asset('assets/img/home/city-guide/restaurants/03-dark.png') }}
+                                                        class="d-none d-block-dark" alt="Image"> --}}
                                                 </div>
                                                 <span
                                                     class="position-absolute top-0 start-0 w-100 h-100 bg-white d-none-dark"></span>
-                                                <span
-                                                    class="position-absolute top-0 start-0 w-100 h-100 bg-body-secondary d-none d-block-dark"></span>
+                                                {{-- <span
+                                                    class="position-absolute top-0 start-0 w-100 h-100 bg-body-secondary d-none d-block-dark"></span> --}}
                                             </div>
                                             <div class="min-w-0 pt-1 ps-3">
                                                 <h3 class="h6 mb-1">
                                                     <a class="hover-effect-underline stretched-link"
-                                                        href="single-entry-city-guide.html">Sbarro</a>
+                                                        href="single-entry-city-guide.html">{{ $food->name }}</a>
                                                 </h3>
                                                 <div class="d-flex align-items-center gap-1 mb-2">
-                                                    <i class="fi-star-filled text-warning"></i>
-                                                    <span class="fs-sm text-secondary-emphasis">4.8</span>
-                                                    <span class="fs-xs text-body-secondary align-self-end">(127)</span>
+                                                    <span class="fs-sm text-secondary-emphasis">{{ $food->food_type }}</span>
                                                 </div>
                                                 <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
                                                     <li class="d-flex align-items-center gap-1 me-2">
                                                         <i class="fi-credit-card"></i>
-                                                        $60
+                                                        ₹ {{ $food->food_price }} 
                                                     </li>
                                                     <li class="d-flex align-items-center gap-1 min-w-0">
                                                         <i class="fi-map-pin"></i>
-                                                        <span class="text-truncate">5.7 km from center</span>
+                                                        <span class="text-truncate">{{ $food->place->name }}</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </article>
-
-                                        <!-- Listing -->
-                                        <article
-                                            class="hover-effect-scale position-relative d-inline-flex align-items-start mt-1 mt-sm-2">
-                                            <div class="flex-shrink-0 rounded overflow-hidden p-3 px-md-4">
-                                                <div class="ratio hover-effect-target z-1"
-                                                    style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)">
-                                                    <img src={{ asset('assets/img/home/city-guide/restaurants/01.png') }}
-                                                        alt="Image">
-                                                </div>
-                                                <span
-                                                    class="position-absolute top-0 start-0 w-100 h-100 bg-white d-none-dark"></span>
-                                                <span
-                                                    class="position-absolute top-0 start-0 w-100 h-100 bg-body-secondary d-none d-block-dark"></span>
-                                            </div>
-                                            <div class="min-w-0 pt-1 ps-3">
-                                                <h3 class="h6 mb-1">
-                                                    <a class="hover-effect-underline stretched-link"
-                                                        href="single-entry-city-guide.html">Mado</a>
-                                                </h3>
-                                                <div class="d-flex align-items-center gap-1 mb-2">
-                                                    <i class="fi-star-filled text-warning"></i>
-                                                    <span class="fs-sm text-secondary-emphasis">4.7</span>
-                                                    <span class="fs-xs text-body-secondary align-self-end">(113)</span>
-                                                </div>
-                                                <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                                    <li class="d-flex align-items-center gap-1 me-2">
-                                                        <i class="fi-credit-card"></i>
-                                                        $50
-                                                    </li>
-                                                    <li class="d-flex align-items-center gap-1 min-w-0">
-                                                        <i class="fi-map-pin"></i>
-                                                        <span class="text-truncate">2.5 km from center</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </article>
-
-                                        <!-- Listing -->
-                                        <article
-                                            class="hover-effect-scale position-relative d-inline-flex align-items-start mt-1 mt-sm-2">
-                                            <div class="flex-shrink-0 rounded overflow-hidden p-3 px-md-4">
-                                                <div class="ratio hover-effect-target z-1"
-                                                    style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)">
-                                                    <img src={{ asset('assets/img/home/city-guide/restaurants/08.png') }}
-                                                        alt="Image">
-                                                </div>
-                                                <span
-                                                    class="position-absolute top-0 start-0 w-100 h-100 bg-white d-none-dark"></span>
-                                                <span
-                                                    class="position-absolute top-0 start-0 w-100 h-100 bg-body-secondary d-none d-block-dark"></span>
-                                            </div>
-                                            <div class="min-w-0 pt-1 ps-3">
-                                                <h3 class="h6 mb-1">
-                                                    <a class="hover-effect-underline stretched-link"
-                                                        href="single-entry-city-guide.html">TacoTime</a>
-                                                </h3>
-                                                <div class="d-flex align-items-center gap-1 mb-2">
-                                                    <i class="fi-star-filled text-warning"></i>
-                                                    <span class="fs-sm text-secondary-emphasis">4.6</span>
-                                                    <span class="fs-xs text-body-secondary align-self-end">(179)</span>
-                                                </div>
-                                                <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                                    <li class="d-flex align-items-center gap-1 me-2">
-                                                        <i class="fi-credit-card"></i>
-                                                        $25
-                                                    </li>
-                                                    <li class="d-flex align-items-center gap-1 min-w-0">
-                                                        <i class="fi-map-pin"></i>
-                                                        <span class="text-truncate">4.8 km from center</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </article>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -1252,7 +910,8 @@
                                     <hr class="my-3 my-xl-4">
                                     <div class="vstack gap-4">
 
-                                        <!-- Listing -->
+                                        @foreach ($threeShop as $shop)
+                                         <!-- Listing -->
                                         <article
                                             class="hover-effect-scale position-relative d-inline-flex align-items-start mt-1 mt-sm-2">
                                             <div
@@ -1266,93 +925,28 @@
                                             <div class="min-w-0 pt-1 ps-3">
                                                 <h3 class="h6 mb-1">
                                                     <a class="hover-effect-underline stretched-link"
-                                                        href="single-entry-city-guide.html">Sagrada Familia</a>
+                                                        href="single-entry-city-guide.html">{{ $shop->name }}</a>
                                                 </h3>
                                                 <div class="d-flex align-items-center gap-1 mb-2">
-                                                    <i class="fi-star-filled text-warning"></i>
-                                                    <span class="fs-sm text-secondary-emphasis">4.8</span>
-                                                    <span class="fs-xs text-body-secondary align-self-end">(12694)</span>
+                                                  
+                                                    <span class="fs-sm text-secondary-emphasis">{{ $shop->shopping_type }}</span>
+                                                    
                                                 </div>
                                                 <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
                                                     <li class="d-flex align-items-center gap-1 me-2">
                                                         <i class="fi-credit-card"></i>
-                                                        $30
+                                                        ₹ {{ $shop->shopping_price }} onwards
                                                     </li>
                                                     <li class="d-flex align-items-center gap-1 min-w-0">
                                                         <i class="fi-map-pin"></i>
-                                                        <span class="text-truncate">0.5 km from center</span>
+                                                        <span class="text-truncate">{{ $shop->place->name }}</span>
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </article>
+                                        </article>   
+                                        @endforeach
+                                        
 
-                                        <!-- Listing -->
-                                        <article
-                                            class="hover-effect-scale position-relative d-inline-flex align-items-start mt-1 mt-sm-2">
-                                            <div
-                                                class="position-relative flex-shrink-0 rounded overflow-hidden p-3 px-md-4">
-                                                <div class="ratio"
-                                                    style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)"></div>
-                                                <img src={{ asset('assets/img/home/city-guide/places/02.jpg') }}
-                                                    class="hover-effect-target position-absolute top-0 start-0 w-100 h-100 object-fit-cover bg-body-secondary z-1"
-                                                    alt="Image">
-                                            </div>
-                                            <div class="min-w-0 pt-1 ps-3">
-                                                <h3 class="h6 mb-1">
-                                                    <a class="hover-effect-underline stretched-link"
-                                                        href="single-entry-city-guide.html">Park Güell</a>
-                                                </h3>
-                                                <div class="d-flex align-items-center gap-1 mb-2">
-                                                    <i class="fi-star-filled text-warning"></i>
-                                                    <span class="fs-sm text-secondary-emphasis">4.9</span>
-                                                    <span class="fs-xs text-body-secondary align-self-end">(9328)</span>
-                                                </div>
-                                                <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                                    <li class="d-flex align-items-center gap-1 me-2">
-                                                        <i class="fi-credit-card"></i>
-                                                        $15
-                                                    </li>
-                                                    <li class="d-flex align-items-center gap-1 min-w-0">
-                                                        <i class="fi-map-pin"></i>
-                                                        <span class="text-truncate">0.7 km from center</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </article>
-
-                                        <!-- Listing -->
-                                        <article
-                                            class="hover-effect-scale position-relative d-inline-flex align-items-start mt-1 mt-sm-2">
-                                            <div
-                                                class="position-relative flex-shrink-0 rounded overflow-hidden p-3 px-md-4">
-                                                <div class="ratio"
-                                                    style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)"></div>
-                                                <img src={{ asset('assets/img/home/city-guide/places/03.jpg') }}
-                                                    class="hover-effect-target position-absolute top-0 start-0 w-100 h-100 object-fit-cover bg-body-secondary z-1"
-                                                    alt="Image">
-                                            </div>
-                                            <div class="min-w-0 pt-1 ps-3">
-                                                <h3 class="h6 mb-1">
-                                                    <a class="hover-effect-underline stretched-link"
-                                                        href="single-entry-city-guide.html">Camp Nou Tour</a>
-                                                </h3>
-                                                <div class="d-flex align-items-center gap-1 mb-2">
-                                                    <i class="fi-star-filled text-warning"></i>
-                                                    <span class="fs-sm text-secondary-emphasis">4.7</span>
-                                                    <span cflass="fs-xs text-body-secondary align-self-end">(6149)</span>
-                                                </div>
-                                                <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                                    <li class="d-flex align-items-center gap-1 me-2">
-                                                        <i class="fi-credit-card"></i>
-                                                        $40
-                                                    </li>
-                                                    <li class="d-flex align-items-center gap-1 min-w-0">
-                                                        <i class="fi-map-pin"></i>
-                                                        <span class="text-truncate">5.2 km from center</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </article>
                                     </div>
                                 </div>
 
