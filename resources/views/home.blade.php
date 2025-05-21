@@ -212,6 +212,7 @@
                     <div class="swiper-wrapper">
 
                         <!-- Listing -->
+                        @foreach ($accomodations as $accomodation) 
                         <div class="swiper-slide">
                             <article class="card hover-effect-scale hover-effect-opacity bg-transparent border-0">
                                 <div class="bg-body-tertiary rounded overflow-hidden">
@@ -231,26 +232,29 @@
                                 <div class="card-body pt-3 pb-2 px-0">
                                     <h3 class="h5 mb-0">
                                         <a class="hover-effect-underline stretched-link"
-                                            href="single-entry-city-guide.html">Pine Cottage</a>
+                                            href=""
+                                            {{-- "{{ route('details', $accomodation->id) }}" --}}
+                                            >{{ $accomodation->name }}</a>
                                     </h3>
                                 </div>
                                 <div class="card-footer d-flex align-items-center gap-3 bg-transparent border-0 p-0">
                                     <div class="d-flex align-items-center gap-1">
-                                        <i class="fi-star-filled text-warning"></i>
-                                        <span class="fs-sm text-secondary-emphasis">4.9</span>
-                                        <span class="fs-xs text-body-secondary align-self-end">(135)</span>
+                                        {{-- <i class="fi-star-filled text-warning"></i> --}}
+                                        {{-- <span class="fs-sm text-secondary-emphasis">4.9</span> --}}
+                                        {{-- <span class="fs-xs text-body-secondary align-self-end">(135)</span> --}}
                                     </div>
                                     <div class="d-flex align-items-center gap-1 fs-sm">
                                         <i class="fi-credit-card"></i>
-                                        $$$
+                                        ₹ {{ $accomodation->room_price }} / night
                                     </div>
                                     <div class="d-flex align-items-center gap-1 min-w-0 fs-sm">
                                         <i class="fi-map-pin"></i>
-                                        <span class="text-truncate">0.8 km from center</span>
+                                        <span class="text-truncate"> {{ $accomodation->place->name }}</span>
                                     </div>
                                 </div>
                             </article>
                         </div>
+                        @endforeach
 
 
                     </div>
@@ -304,6 +308,7 @@
                     <div class="swiper-wrapper">
 
                         <!-- Listing -->
+                        @foreach ($activities as $activity)     
                         <div class="swiper-slide h-auto">
                             <article class="card h-100 hover-effect-scale hover-effect-opacity bg-transparent">
                                 <div class="card-img-top position-relative bg-body-tertiary overflow-hidden">
@@ -322,30 +327,28 @@
                                 </div>
                                 <div class="card-body pt-3 pb-2 px-3">
                                     <span
-                                        class="badge text-body-emphasis bg-secondary-subtle text-decoration-none mb-2">Entertainment</span>
+                                        class="badge text-body-emphasis bg-secondary-subtle text-decoration-none mb-2">{{ $activity->category->name }}</span>
                                     <h3 class="h5 pt-1 mb-2">
                                         <a class="hover-effect-underline stretched-link"
-                                            href="single-entry-city-guide.html">Barcelona National Zoo</a>
+                                            href="single-entry-city-guide.html">{{ $activity->name }}</a>
                                     </h3>
-                                    <p class="fs-sm mb-0">Discover fascinating animals and a fun-filled adventure for the
-                                        whole family.</p>
+                                    <p class="fs-sm mb-0">{{$activity->description}}</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 pt-0 pb-3 px-3">
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="d-flex align-items-center gap-1">
-                                            <i class="fi-star-filled text-warning"></i>
-                                            <span class="fs-sm text-secondary-emphasis">4.6</span>
-                                            <span class="fs-xs text-body-secondary align-self-end">(7523)</span>
+                                           <span class="text-truncate">{{ $activity->entertainment_type }}</span>
                                         </div>
                                         <div class="d-flex align-items-center gap-1 min-w-0 fs-sm">
                                             <i class="fi-map-pin"></i>
-                                            <span class="text-truncate">3.2 km from center</span>
+                                            <span class="text-truncate">{{ $activity->place->name }}</span>
                                         </div>
                                     </div>
-                                    <div class="h6 pt-3 mb-0">$20</div>
+                                    <div class="h6 pt-3 mb-0">₹ {{ $activity->entertainment_price }} / day</div>
                                 </div>
                             </article>
                         </div>
+                        @endforeach
 
                     </div>
 
