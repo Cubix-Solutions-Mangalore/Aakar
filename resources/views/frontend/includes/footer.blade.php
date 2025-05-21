@@ -8,8 +8,8 @@
                 <a class="d-inline-flex align-items-center text-dark-emphasis text-decoration-none mb-4"
                     href="index.html">
                     <span class="flex-shrink-0 text-primary rtl-flip me-2">
-                      <img src="{{ asset('assets/img/travelTechLogo.png') }}" alt="Image" class="image"
-                      style="width: 60px; height: auto;">
+                        <img src="{{ asset('assets/img/travelTechLogo.png') }}" alt="Image" class="image"
+                            style="width: 60px; height: auto;">
                     </span>
                     <span class="fs-4 fw-semibold">Travel Tech</span>
                 </a>
@@ -52,7 +52,7 @@
                         </li>
                         <li class="pt-1">
                             <a class="nav-link hover-effect-underline d-inline text-body fw-normal p-0"
-                                href="popular-vacation">Popular Vacation Spots</a>
+                                href="/popular-vacation">Popular Vacation Spots</a>
                         </li>
                         <li class="pt-1">
                             <a class="nav-link hover-effect-underline d-inline text-body fw-normal p-0"
