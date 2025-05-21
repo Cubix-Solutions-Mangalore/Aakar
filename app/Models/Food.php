@@ -53,7 +53,7 @@ class Food extends Model
         'food_type' => 'string',
         'food_price' => 'string',
         'food_capacity' => 'string',
-
+        'image' => 'array',
     ];
 
     

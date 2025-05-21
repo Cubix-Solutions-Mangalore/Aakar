@@ -38,6 +38,18 @@ class Entertainment extends Model
         'entertainment_capacity',
     ];
 
+      protected $casts = [
+        'opening_time' => 'datetime',
+        'closing_time' => 'datetime',
+        'tags' => 'array',
+        'gmap' => 'array',
+        'description_tags' => 'array',
+        'entertainment_type' => 'string',
+        'entertainment_price' => 'string',
+        'entertainment_capacity' => 'string',
+        'image' => 'array',
+    ];
+
     public function place()
     {
         return $this->belongsTo(Place::class);
