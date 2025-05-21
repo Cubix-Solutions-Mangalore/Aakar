@@ -32,7 +32,7 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationGroup = 'Category Settings';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-adjustments-vertical';
 
     public static function getNavigationBadge(): ?string
     {
@@ -71,10 +71,6 @@ class CategoryResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->label('Name'),
-                TextColumn::make('slug')
-                    ->searchable()
-                    ->sortable()
-                    ->label('Slug'),
                 TextColumn::make('icon-class')
                     ->searchable()
                     ->sortable()

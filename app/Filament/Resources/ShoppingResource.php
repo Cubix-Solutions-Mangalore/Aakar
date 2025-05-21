@@ -27,7 +27,7 @@ class ShoppingResource extends Resource
 {
     protected static ?string $model = Shopping::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
     
 
       protected static ?string $navigationGroup = 'Lifestyle Settings';
@@ -89,8 +89,6 @@ class ShoppingResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('address')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('phone')
@@ -99,37 +97,8 @@ class ShoppingResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('website')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('category_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('place_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('opening_time')
-                    ->dateTime()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('closing_time')
-                    ->dateTime()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('logo')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('description_tags')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('shopping_type')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('shopping_price')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('shopping_capacity')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
