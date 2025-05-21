@@ -71,14 +71,14 @@ class ShoppingResource extends Resource
                     TagsInput::make('description_tags'),
                     Textarea::make('gmap')
                         ->columnSpanFull(),
-                    Select::make('health_type')->options([
-                        'spa' => 'Spa',
-                        'gym' => 'Gym',
-                        'yoga' => 'Yoga',
-                        'health-care' => 'Health Care',
-                    ])->required()->searchable(),
-                    TextInput::make('health_price'),
-                    TextInput::make('health_capacity'),
+                    Select::make('shopping_type')->options([
+                        'clothing' => 'Clothing',
+                        'electronics' => 'Electronics',
+                        'groceries' => 'Groceries',
+                        'furniture' => 'Furniture',
+                    ])->required()->searchable()->default('clothing'),
+                    TextInput::make('shopping_price'),
+                    TextInput::make('shopping_capacity'),
                ])->collapsible()->columns(2),
             ]);
     }

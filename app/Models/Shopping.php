@@ -51,8 +51,18 @@ class Shopping extends Model
         'description_tags' => 'array',
         'shopping_type' => 'string',
         'shopping_price' => 'string',
+        'image' => 'array',
         'shopping_capacity' => 'string',
     ];
     
+    public function place()
+    {
+        return $this->belongsTo(Place::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
     
 }
