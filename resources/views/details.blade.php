@@ -10,7 +10,7 @@
     <nav class="pb-2" aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="home-city-guide.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="listings-side-filters-city-guide.html">Restaurants</a></li>
+
         <li class="breadcrumb-item active" aria-current="page">Sbarro Restaurant</li>
       </ol>
     </nav>

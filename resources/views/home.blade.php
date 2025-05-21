@@ -232,8 +232,8 @@
                                 <div class="card-body pt-3 pb-2 px-0">
                                     <h3 class="h5 mb-0">
                                         <a class="hover-effect-underline stretched-link"
-                                            href=""
-                                            {{-- "{{ route('details', $accomodation->id) }}" --}}
+                                            href=
+                                            "{{ route('details', $accomodation->id) }}"
                                             >{{ $accomodation->name }}</a>
                                     </h3>
                                 </div>
@@ -693,15 +693,7 @@
                                     charming restaurant. With a focus on quality and creativity,
                                     Jardinet D'Aribau offers a diverse menu that blends traditional Mediterranean cuisine
                                     with modern culinary techniques. Perfect for a memorable dining experience!</p>
-                                <a class="btn btn-lg btn-primary rounded-pill d-none d-sm-inline-flex"
-                                    href="single-entry-city-guide.html">
-                                    View more
-                                    <i class="fi-chevron-right fs-xl ms-1 me-n1"></i>
-                                </a>
-                                <a class="btn btn-primary rounded-pill d-sm-none" href="single-entry-city-guide.html">
-                                    View more
-                                    <i class="fi-chevron-right fs-lg ms-1 me-n1"></i>
-                                </a>
+                                
                             </div>
 
                             <!-- Item -->
@@ -726,15 +718,7 @@
                                     in Europe, featuring a five-million-liter main tank and thousands of sea creatures from
                                     all over the world. Marvel at the mesmerizing dance of stingrays, the graceful glide of
                                     sea turtles, and the vibrant colors of tropical fish.</p>
-                                <a class="btn btn-lg btn-primary rounded-pill d-none d-sm-inline-flex"
-                                    href="single-entry-city-guide.html">
-                                    View more
-                                    <i class="fi-chevron-right fs-xl ms-1 me-n1"></i>
-                                </a>
-                                <a class="btn btn-primary rounded-pill d-sm-none" href="single-entry-city-guide.html">
-                                    View more
-                                    <i class="fi-chevron-right fs-lg ms-1 me-n1"></i>
-                                </a>
+                                
                             </div>
 
                             <!-- Item -->
@@ -759,15 +743,7 @@
                                     offering cutting-edge VR experiences for all ages. Guests can engage in thrilling
                                     multiplayer games, virtual roller coasters, and interactive adventures in a high-tech
                                     environment, making it a top attraction for futuristic fun and family entertainment.</p>
-                                <a class="btn btn-lg btn-primary rounded-pill d-none d-sm-inline-flex"
-                                    href="single-entry-city-guide.html">
-                                    View more
-                                    <i class="fi-chevron-right fs-xl ms-1 me-n1"></i>
-                                </a>
-                                <a class="btn btn-primary rounded-pill d-sm-none" href="single-entry-city-guide.html">
-                                    View more
-                                    <i class="fi-chevron-right fs-lg ms-1 me-n1"></i>
-                                </a>
+                                
                             </div>
                         </div>
                     </div>
@@ -788,7 +764,7 @@
                 <h2 class="mb-0">Where to eat</h2>
                 <div class="nav">
                     <a class="nav-link position-relative fs-base text-nowrap py-1 px-0"
-                        href="listings-side-filters-city-guide.html">
+                        href="{{ route('lifestyle', 'food') }}">
                         <span class="hover-effect-underline stretched-link me-1">View all</span>
                         <i class="fi-chevron-right fs-lg"></i>
                     </a>
