@@ -50,8 +50,8 @@
                             data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false" --}}>Home</a>
                     </li>
                     <li class="nav-item position-static py-lg-2 me-lg-n1 me-xl-0">
-                        <a class="nav-link rounded-pill" href="#" role="button" data-bs-toggle="dropdown"
-                            data-bs-trigger="hover" aria-expanded="false">Listings</a>
+                        <a class="nav-link rounded-pill" href="{{ route('accomodation') }}" role="button" data-bs-toggle="dropdown"
+                            data-bs-trigger="hover" aria-expanded="false">Accommodations</a>
                     </li>
                     <li class="nav-item py-lg-2 me-lg-n1 me-xl-0">
                         <a class="nav-link rounded-pill" href="#" role="button" data-bs-toggle="dropdown"

@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/accomodation', [HomeController::class, 'accomodation'])->name('accomodation');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
