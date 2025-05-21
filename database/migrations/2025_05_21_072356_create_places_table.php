@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::create('places', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->string('location');
+            $table->longText('gmap')->nullable();
+            $table->string('country');
+            $table->string('city');
+            $table->string('country_flag')->nullable();
+            $table->longText('images')->nullable();
             $table->string('slug')->unique();
             $table->string('description')->nullable();
             $table->timestamps();
