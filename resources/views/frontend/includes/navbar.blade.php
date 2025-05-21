@@ -118,7 +118,7 @@
             <!-- Add business button  -->
             <a class="btn btn-primary animate-scale rounded-pill" href="{{ route('register') }}">
                 {{-- <i class="fi-arrow fs-lg animate-target ms-n2 me-1 me-sm-2"></i> --}}
-                Sign<span class="d-none d-xl-inline ms-1">Up</span>
+                Sign Up
             </a>
             @endguest
         </div>
