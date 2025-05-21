@@ -26,7 +26,7 @@ class EntertainmentResource extends Resource
 {
     protected static ?string $model = Entertainment::class;
 
-protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+protected static ?string $navigationIcon = 'heroicon-o-tv';
 
     protected static ?string $navigationGroup = 'Lifestyle Settings';
 
@@ -84,47 +84,18 @@ protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('address')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('phone')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('website')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('category_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('place_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('opening_time')
-                    ->dateTime()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('closing_time')
-                    ->dateTime()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('logo')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('description_tags')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('entertainment_type')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('entertainment_price')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('entertainment_capacity')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

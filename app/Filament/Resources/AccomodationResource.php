@@ -26,7 +26,7 @@ class AccomodationResource extends Resource
 {
     protected static ?string $model = Accomodation::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-home-modern';
 
     protected static ?string $navigationGroup = 'Lifestyle Settings';
 
@@ -87,41 +87,11 @@ class AccomodationResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('address')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('phone')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('website')
-                    ->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('category_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('place_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('opening_time')
-                    ->dateTime()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('closing_time')
-                    ->dateTime()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('logo')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('description_tags')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('room_type')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('room_price')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('room_capacity')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('room_amenities')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
