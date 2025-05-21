@@ -910,7 +910,8 @@
                                     <hr class="my-3 my-xl-4">
                                     <div class="vstack gap-4">
 
-                                        <!-- Listing -->
+                                        @foreach ($threeShop as $shop)
+                                         <!-- Listing -->
                                         <article
                                             class="hover-effect-scale position-relative d-inline-flex align-items-start mt-1 mt-sm-2">
                                             <div
@@ -924,93 +925,28 @@
                                             <div class="min-w-0 pt-1 ps-3">
                                                 <h3 class="h6 mb-1">
                                                     <a class="hover-effect-underline stretched-link"
-                                                        href="single-entry-city-guide.html">Sagrada Familia</a>
+                                                        href="single-entry-city-guide.html">{{ $shop->name }}</a>
                                                 </h3>
                                                 <div class="d-flex align-items-center gap-1 mb-2">
-                                                    <i class="fi-star-filled text-warning"></i>
-                                                    <span class="fs-sm text-secondary-emphasis">4.8</span>
-                                                    <span class="fs-xs text-body-secondary align-self-end">(12694)</span>
+                                                  
+                                                    <span class="fs-sm text-secondary-emphasis">{{ $shop->shopping_type }}</span>
+                                                    
                                                 </div>
                                                 <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
                                                     <li class="d-flex align-items-center gap-1 me-2">
                                                         <i class="fi-credit-card"></i>
-                                                        $30
+                                                        ₹ {{ $shop->shopping_price }} onwards
                                                     </li>
                                                     <li class="d-flex align-items-center gap-1 min-w-0">
                                                         <i class="fi-map-pin"></i>
-                                                        <span class="text-truncate">0.5 km from center</span>
+                                                        <span class="text-truncate">{{ $shop->place->name }}</span>
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </article>
+                                        </article>   
+                                        @endforeach
+                                        
 
-                                        <!-- Listing -->
-                                        <article
-                                            class="hover-effect-scale position-relative d-inline-flex align-items-start mt-1 mt-sm-2">
-                                            <div
-                                                class="position-relative flex-shrink-0 rounded overflow-hidden p-3 px-md-4">
-                                                <div class="ratio"
-                                                    style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)"></div>
-                                                <img src={{ asset('assets/img/home/city-guide/places/02.jpg') }}
-                                                    class="hover-effect-target position-absolute top-0 start-0 w-100 h-100 object-fit-cover bg-body-secondary z-1"
-                                                    alt="Image">
-                                            </div>
-                                            <div class="min-w-0 pt-1 ps-3">
-                                                <h3 class="h6 mb-1">
-                                                    <a class="hover-effect-underline stretched-link"
-                                                        href="single-entry-city-guide.html">Park Güell</a>
-                                                </h3>
-                                                <div class="d-flex align-items-center gap-1 mb-2">
-                                                    <i class="fi-star-filled text-warning"></i>
-                                                    <span class="fs-sm text-secondary-emphasis">4.9</span>
-                                                    <span class="fs-xs text-body-secondary align-self-end">(9328)</span>
-                                                </div>
-                                                <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                                    <li class="d-flex align-items-center gap-1 me-2">
-                                                        <i class="fi-credit-card"></i>
-                                                        $15
-                                                    </li>
-                                                    <li class="d-flex align-items-center gap-1 min-w-0">
-                                                        <i class="fi-map-pin"></i>
-                                                        <span class="text-truncate">0.7 km from center</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </article>
-
-                                        <!-- Listing -->
-                                        <article
-                                            class="hover-effect-scale position-relative d-inline-flex align-items-start mt-1 mt-sm-2">
-                                            <div
-                                                class="position-relative flex-shrink-0 rounded overflow-hidden p-3 px-md-4">
-                                                <div class="ratio"
-                                                    style="width: 64px; --fn-aspect-ratio: calc(48 / 64 * 100%)"></div>
-                                                <img src={{ asset('assets/img/home/city-guide/places/03.jpg') }}
-                                                    class="hover-effect-target position-absolute top-0 start-0 w-100 h-100 object-fit-cover bg-body-secondary z-1"
-                                                    alt="Image">
-                                            </div>
-                                            <div class="min-w-0 pt-1 ps-3">
-                                                <h3 class="h6 mb-1">
-                                                    <a class="hover-effect-underline stretched-link"
-                                                        href="single-entry-city-guide.html">Camp Nou Tour</a>
-                                                </h3>
-                                                <div class="d-flex align-items-center gap-1 mb-2">
-                                                    <i class="fi-star-filled text-warning"></i>
-                                                    <span class="fs-sm text-secondary-emphasis">4.7</span>
-                                                    <span cflass="fs-xs text-body-secondary align-self-end">(6149)</span>
-                                                </div>
-                                                <ul class="list-inline flex-nowrap gap-2 fs-sm mb-0">
-                                                    <li class="d-flex align-items-center gap-1 me-2">
-                                                        <i class="fi-credit-card"></i>
-                                                        $40
-                                                    </li>
-                                                    <li class="d-flex align-items-center gap-1 min-w-0">
-                                                        <i class="fi-map-pin"></i>
-                                                        <span class="text-truncate">5.2 km from center</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </article>
                                     </div>
                                 </div>
 

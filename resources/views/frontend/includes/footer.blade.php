@@ -74,7 +74,7 @@
                     <ul class="nav flex-column gap-2 pt-sm-1 pt-lg-2 pb-3 pb-sm-0 mt-n1 mb-1 mb-sm-0">
                         <li class="pt-1">
                             <a class="nav-link hover-effect-underline d-inline text-body fw-normal p-0"
-                                href="#!">My account</a>
+                                href="{{ route('dashboard') }}">My account</a>
                         </li>
                         <li class="pt-1">
                             <a class="nav-link hover-effect-underline d-inline text-body fw-normal p-0"
