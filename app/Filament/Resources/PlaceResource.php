@@ -12,6 +12,8 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Set;
+use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -39,8 +41,10 @@ class PlaceResource extends Resource
         return $form
             ->schema([
                 Section::make('Destination Details')->schema([
-                    TextInput::make('name')
-                        ->required(),
+                   TextInput::make('name')
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))
+                            ->required(),
                     TextInput::make('location')
                         ->required(),
                         TextInput::make('country')
@@ -57,7 +61,7 @@ class PlaceResource extends Resource
                         ->preserveFilenames()->imageEditor()->reorderable()
                         ->openable()
                         ->downloadable(),
-                        FileUpload::make('images')->multiple()->reorderable()->panelLayout('grid'),
+                        FileUpload::make('images')->multiple()->reorderable()->panelLayout('grid')->directory('places-images'),
                         ])->columns(2),
                 ])->collapsible()->columns(3),
             ]);

@@ -52,6 +52,7 @@ class Health extends Model
         'description_tags' => 'array',
         'health_type' => 'string',
         'health_price' => 'string',
+        'image' => 'array',
         'health_capacity' => 'string',
     ];
 

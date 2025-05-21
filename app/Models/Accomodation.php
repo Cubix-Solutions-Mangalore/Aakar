@@ -33,10 +33,10 @@ class Accomodation extends Model
         'tags',
         'gmap',
         'description_tags',
-        'accomodation_type',
-        'accomodation_price',
-        'accomodation_capacity',
-        'accomodation_amenities',
+        'room_type',
+        'room_price',
+        'room_capacity',
+        'room_amenities',
     ];
 
     /**
@@ -51,10 +51,11 @@ class Accomodation extends Model
         'tags' => 'array',
         'gmap' => 'array',
         'description_tags' => 'array',
-        'accomodation_type' => 'string',
-        'accomodation_price' => 'string',
-        'accomodation_capacity' => 'string',
-        'accomodation_amenities' => 'string',
+        'room_type' => 'string',
+        'room_price' => 'string',
+        'room_capacity' => 'string',
+        'room_amenities' => 'string',
+        'image' => 'array',
     ];
 
     public function place()

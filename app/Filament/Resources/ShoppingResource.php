@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AccomodationResource\Pages;
-use App\Filament\Resources\AccomodationResource\RelationManagers;
-use App\Models\Accomodation;
+use App\Filament\Resources\ShoppingResource\Pages;
+use App\Filament\Resources\ShoppingResource\RelationManagers;
+use App\Models\Shopping;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
@@ -14,33 +14,36 @@ use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Resources\Resource;
+
 use Filament\Forms\Set;
 use Illuminate\Support\Str;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AccomodationResource extends Resource
+class ShoppingResource extends Resource
 {
-    protected static ?string $model = Accomodation::class;
+    protected static ?string $model = Shopping::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    
 
-    protected static ?string $navigationGroup = 'Lifestyle Settings';
+      protected static ?string $navigationGroup = 'Lifestyle Settings';
 
-    protected static ?string $modelLabel = 'Accomodations';
+    protected static ?string $modelLabel = 'Shopping';
 
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
     }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Section::make('Accomadation Details')->schema([
+                  Section::make('Shopping Details')->schema([
                    TextInput::make('name')
                             ->live(onBlur: true)
                             ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))
@@ -51,7 +54,7 @@ class AccomodationResource extends Resource
                         ->columnSpanFull(),
                         Textarea::make('address'),
                         FileUpload::make('image')
-                            ->image()->multiple()->reorderable()->panelLayout('grid')->directory('accomodation-images'),
+                            ->image()->multiple()->reorderable()->panelLayout('grid')->directory('health-images'),
                     TextInput::make('phone')
                         ->tel(),
                     TextInput::make('email')
@@ -63,21 +66,20 @@ class AccomodationResource extends Resource
                         ->required()->relationship('place', 'name')->preload()->searchable(),
                     DateTimePicker::make('opening_time'),
                     DateTimePicker::make('closing_time'),
-                    FileUpload::make('logo') ->image()->directory('accomodation-logo'),
+                    FileUpload::make('logo') ->image()->directory('health-logo'),
                     TagsInput::make('tags')->required(),
                     TagsInput::make('description_tags'),
                     Textarea::make('gmap')
                         ->columnSpanFull(),
-                    Select::make('room_type')->options([
-                        'single' => 'Single',
-                        'double' => 'Double',
-                        'suite' => 'Suite',
-                    ])->required(),
-                    TextInput::make('room_price'),
-                    TextInput::make('room_capacity'),
-                    TextInput::make('room_amenities'),
-                ])->columns(2)->collapsible(),
-
+                    Select::make('health_type')->options([
+                        'spa' => 'Spa',
+                        'gym' => 'Gym',
+                        'yoga' => 'Yoga',
+                        'health-care' => 'Health Care',
+                    ])->required()->searchable(),
+                    TextInput::make('health_price'),
+                    TextInput::make('health_capacity'),
+               ])->collapsible()->columns(2),
             ]);
     }
 
@@ -97,7 +99,6 @@ class AccomodationResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('website')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('category_id')
                     ->numeric()
                     ->sortable(),
@@ -114,13 +115,12 @@ class AccomodationResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description_tags')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('room_type')
+                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('shopping_type')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('room_price')
+                Tables\Columns\TextColumn::make('shopping_price')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('room_capacity')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('room_amenities')
+                Tables\Columns\TextColumn::make('shopping_capacity')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -154,9 +154,9 @@ class AccomodationResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAccomodations::route('/'),
-            'create' => Pages\CreateAccomodation::route('/create'),
-            'edit' => Pages\EditAccomodation::route('/{record}/edit'),
+            'index' => Pages\ListShoppings::route('/'),
+            'create' => Pages\CreateShopping::route('/create'),
+            'edit' => Pages\EditShopping::route('/{record}/edit'),
         ];
     }
 }
