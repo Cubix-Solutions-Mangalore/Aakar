@@ -100,7 +100,7 @@
                     @foreach ($place->images as $item)
                     <div class="col">
                         <a class="hover-effect-scale hover-effect-opacity position-relative d-flex rounded overflow-hidden"
-                            href="assets/img/listings/city-guide/single/02.jpg" data-glightbox=""
+                            href="{{ asset('assets/img/listings/city-guide/single/02.jpg') }}" data-glightbox=""
                             data-gallery="image-gallery">
                             <i
                                 class="fi-zoom-in hover-effect-target fs-3 text-white position-absolute top-50 start-50 translate-middle opacity-0 z-2"></i>
