@@ -12,6 +12,7 @@ Route::get('/lifestyle/{type}', [HomeController::class, 'lifestyle'])->name('lif
 Route::get('/popular-vacation', [HomeController::class, 'popular_vacation'])->name('popular_vacation');
 Route::get('/popular-activity', [HomeController::class, 'popular_activity'])->name('popular_activity');
 Route::get('/details/{type}', [HomeController::class, 'details'])->name('details');
+Route::get('/destination-details/{id}', [HomeController::class, 'destinationDetails'])->name('deti.details');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
