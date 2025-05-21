@@ -9,7 +9,8 @@
 
         <a class="navbar-brand py-1 py-md-2 py-xl-1 me-2 me-sm-n4 me-md-n5 me-lg-0" href="{{ route('home') }}">
             <span class="d-none d-sm-flex flex-shrink-0 text-primary rtl-flip me-2">
-            <img src="" alt="">
+                <img src="{{ asset('assets/img/travelTechLogo.png') }}" alt="Image" class="image"
+                    style="width: 60px; height: auto;">
             </span>
             Travel Tech
         </a>
