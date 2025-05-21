@@ -87,11 +87,11 @@
             </div>
 
             @auth
-                <!-- Account button -->
-                <a class="btn btn-icon btn-outline-secondary fs-lg border-0 animate-shake me-2" href="account-signin.html"
-                    aria-label="Sign in to account">
-                    <i class="fi-user animate-target"></i>
-                </a>
+            <!-- Account button -->
+            <a class="btn btn-icon btn-outline-secondary fs-lg border-0 animate-shake me-2" href="{{ route('dashboard') }}"
+                aria-label="Dashboard">
+                <i class="fi-user animate-target"></i>
+            </a>
             @endauth
             @guest
                 <!-- Add business button  -->
