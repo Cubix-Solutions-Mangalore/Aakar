@@ -54,7 +54,8 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])->brandName('Travel Tech')
-             ->favicon(asset('images/favicon.png'))
+            ->brandLogo(asset('assets/img/travelTechLogo.png'))
+             ->favicon(asset('images/favicon.png')) ->brandLogoHeight('4rem')
              ->sidebarCollapsibleOnDesktop();
     }
 }

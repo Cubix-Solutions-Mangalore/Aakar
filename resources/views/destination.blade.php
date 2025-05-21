@@ -50,10 +50,6 @@
                                <b>City</b>: {{ $item->city }}
                             </div>
                             <div class="d-flex align-items-center gap-1 min-w-0 fs-sm">
-                                <i class="fi-map-pin"></i>
-                                <span class="text-truncate">{{ $item->location }}</span>
-                            </div>
-                            <div class="d-flex align-items-center gap-1 min-w-0 fs-sm">
                                 <a href="{{ $item->gmap }}">Get on Map</a>
                             </div>
                         </div>
